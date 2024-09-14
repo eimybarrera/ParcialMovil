@@ -1,7 +1,7 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
-import AntDesign from "@expo/vector-icons/AntDesign";
+import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 //screens
@@ -14,8 +14,8 @@ const HomeStack = createNativeStackNavigator();
 
 function HomeStackScreen() {
   return (
-    <HomeStack.Navigator initialRouteName="Home">
-      <HomeStack.Screen name="Home" component={Home} />
+    <HomeStack.Navigator initialRouteName="Perritos">
+      <HomeStack.Screen name="Perritos" component={Home} />
       <HomeStack.Screen name="Stack" component={Stack} />
     </HomeStack.Navigator>
   );
@@ -24,29 +24,30 @@ function HomeStackScreen() {
 function RoutingTabs() {
   return (
     <TabNav.Navigator
-      initialRouteName="Home"
+      initialRouteName="Perritos"
       screenOptions={{
         tabBarActiveTintColor: "green",
         tabBarInactiveTintColor: "red",
       }}
     >
       <TabNav.Screen
-        name="Home"
+        name="Perritos"
         component={HomeStackScreen}
         options={{
-          tabBarLabel: "holiooo",
+          tabBarLabel: "Perritos",
           tabBarIcon: (color, size) => (
-            <AntDesign name="heart" size={24} color="black" />
+            <FontAwesome5 name="dog" size={24} color="black" />
           ),
           headerShown: false,
         }}
       />
       <TabNav.Screen
-        name="Profile"
+        name="Gaticos"
         component={Profile}
         options={{
+          tabBarLabel: "Gaticos",
           tabBarIcon: (color, size) => (
-            <AntDesign name="hearto" size={24} color="black" />
+            <FontAwesome5 name="cat" size={24} color="black" />
           ),
         }}
       />

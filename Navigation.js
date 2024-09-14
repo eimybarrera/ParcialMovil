@@ -6,7 +6,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 //screens
 import Home from "./src/screens/Home";
-import Profile from "./src/screens/Profile";
+import Gato from "./src/screens/Gato";
 import Stack from "./src/screens/Stack";
 
 const TabNav = createBottomTabNavigator();
@@ -43,7 +43,7 @@ function RoutingTabs() {
       />
       <TabNav.Screen
         name="Gaticos"
-        component={Profile}
+        component={Gato}
         options={{
           tabBarLabel: "Gaticos",
           tabBarIcon: (color, size) => (

@@ -6,11 +6,14 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 //screens
 import Home from "./src/screens/Home";
-import Gato from "./src/screens/Gato";
 import Stack from "./src/screens/Stack";
+import Gato from "./src/screens/Gato";
+import InfoGatos from "./src/screens/InfoGatos";
+
 
 const TabNav = createBottomTabNavigator();
 const HomeStack = createNativeStackNavigator();
+const GatoStack= createNativeStackNavigator();
 
 function HomeStackScreen() {
   return (
@@ -19,6 +22,14 @@ function HomeStackScreen() {
       <HomeStack.Screen name="Stack" component={Stack} />
     </HomeStack.Navigator>
   );
+}
+function GatoStackScreen(){
+  return(
+    <GatoStack.Navigator initialRouteName="Gaticos">
+      <GatoStack.Screen name="Gaticos" component={Gato}/>
+      <GatoStack.Screen name="InfoGatos" component={InfoGatos}/>
+    </GatoStack.Navigator>
+  )
 }
 
 function RoutingTabs() {
@@ -43,12 +54,13 @@ function RoutingTabs() {
       />
       <TabNav.Screen
         name="Gaticos"
-        component={Gato}
+        component={GatoStackScreen}
         options={{
           tabBarLabel: "Gaticos",
           tabBarIcon: (color, size) => (
             <FontAwesome5 name="cat" size={24} color="black" />
           ),
+          headerShown: false,
         }}
       />
     </TabNav.Navigator>

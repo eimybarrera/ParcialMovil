@@ -28,7 +28,7 @@ export default function Gato() {
       <Image source={{ uri: item.url }} style={styles.image} />
       <TouchableOpacity
         style={styles.button}
-        onPress={()=> navigation.navigate('InfoGato', {id: item.id})} >
+        onPress={()=> navigation.navigate('InfoGatos', {id: item.id})} >
           <Text style={styles.buttonText}> Ver mas </Text>
 
       </TouchableOpacity>
